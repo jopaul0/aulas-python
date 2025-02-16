@@ -1,0 +1,85 @@
+1)
+
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+s = n1 + n2
+print('A soma é ',s)
+
+2)
+
+m = int(input('Digite o valor em metros: '))
+mm = m * 1000
+print('O valor em milímetros é ',mm,'mm')
+
+3)
+
+d = int(input('Digite os dias: '))
+h = int(input('Digite as horas: '))
+m = int(input('Digite os minutos: '))
+s = int(input('Digite os segundos: '))
+
+t = (d*24*60*60) + (h*60*60) + (m*60) + s
+print('O total de segundos é ', t)
+
+4)
+
+s = int(input('Digite o valor do salário: '))
+p = int(input('Digite a porcentagem do aumento (sem o %): '))
+
+a = s * p / 100
+ns = s+a
+
+print('O novo salário é R$ %.2f'% ns)
+
+5)
+
+m = int(input('Digite o preço da mercadoria: '))
+d = int(input('Digite o percentual de desconto: '))
+vd = m * d / 100
+nm = m - vd
+print('O novo valor é R$%.2f'%nm)
+
+6)
+
+d = int(input('Digite a distância: '))
+vm = int(input('Digite a velocidade média: '))
+
+t = d/vm
+print('O tempo estimado é de %.1f segundos'%t)
+
+7)
+
+c = int(input('Digite a temperatura em Celsius: '))
+
+f = 9*c/5+32
+print('A temperatura em Fahrenheit é %.1f graus'%f)
+
+8)
+
+f = int(input('Digite a temperatura em Fahrenheit: '))
+
+c = (f-32)*5/9
+
+print('A temperatura em Celsius é %.1f graus'%c)
+
+9)
+
+km = int(input('Digite a quantidade de km rodados: '))
+d = int(input('Digite a quantidade de dias alugados: '))
+
+t= (d*60) + (km*0.15)
+
+print('O valor total a ser pago é R$%.2f'%t)
+
+10)
+
+c = int(input('Digite a quantidade de cigarros fumados por dia: '))
+a = int(input('Digite a quantidade de anos fumados: '))
+
+t = (c*10/1440)*(a*365)
+
+print('A redução de vida foi de %d dias'%t) 
+
+11)
+
+print (len(str(2**1000000)))

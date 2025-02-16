@@ -1,0 +1,125 @@
+1)
+
+class Triangle:
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+        if (a+b>c) and (a+c>b) and (b+c>a):
+            self.triangle= True
+        else:
+             self.triangle= False
+    
+    def whatTriangle(self):
+        if self.triangle:
+            if self.a == self.b == self.c:
+                print('O triângulo é equilátero.')
+            elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:
+                print('O triângulo é isósceles.')
+            else:
+                print('O triângulo é escaleno.')
+        else:
+            print('Não é possível formar um triângulo com essas medidas')
+
+lado1 = float(input('Digite o primeiro lado do triângulo: '))
+lado2 = float(input('Digite o segundo lado do triângulo: '))
+lado3 = float(input('Digite o terceiro lado do triângulo: '))
+
+triangulo = Triangle(lado1,lado2,lado3)
+triangulo.whatTriangle()
+
+2)
+
+def isBissexto(ano):
+    if ano % 4 == 0 and (ano % 100 != 0 or ano % 400 ==0):
+        print('O ano é bissexto')
+    else:
+        print('O ano não é bissexto')
+
+ano = int(input('Digite o ano: '))
+isBissexto(ano) 
+
+3)
+
+def multa(peso):
+    if peso <= 50:
+        multa=0
+        excesso=0
+    else:
+        excesso= peso - 50
+        multa = excesso * 4
+
+    return excesso, multa
+    
+
+peso = float(input('Digite o peso dos peixes: '))
+excesso, multa = multa(peso)
+print(f'Excesso de peso: {excesso:.2f} kg')
+print(f'Multa: R${multa:.2f}')
+
+4)
+
+def whatBigger(number1,number2,number3):
+    if number1 > number2 and number1 > number3:
+        return number1
+    elif number2 > number3:
+        return number2
+    else:
+        return number3
+    
+number1 = int(input('Digite o primeiro número: '))
+number2 = int(input('Digite o segundo número: '))
+number3 = int(input('Digite o terceiro número: '))
+
+print(f'O maior número é o {whatBigger(number1,number2,number3)}')
+
+5)
+
+def whatSmaller(number1,number2,number3):
+    if number1 < number2 and number1 < number3:
+        return number1
+    elif number2 < number3:
+        return number2
+    else:
+        return number3
+    
+
+number1 = int(input('Digite o primeiro número: '))
+number2 = int(input('Digite o segundo número: '))
+number3 = int(input('Digite o terceiro número: '))
+
+print(f'O menor número é o {whatSmaller(number1,number2,number3)}')
+
+6)
+
+def salario(ganhoPorHora, horasTrabalhadas):
+    salarioBruto= ganhoPorHora * horasTrabalhadas
+    ir = salarioBruto * 0.11
+    inss = salarioBruto * 0.08
+    sindicato = salarioBruto * 0.05
+    salarioLiquido = salarioBruto - ir - inss - sindicato
+    return salarioBruto,ir,inss,sindicato,salarioLiquido
+
+ganhoPorHora= float(input('Digite o quanto você ganha por hora: '))
+horasTrabalhadas=int(input('Digite a quantidade de horas trabalhadas no mês: '))
+salarioBruto,ir,inss,sindicato,salarioLiquido = salario(ganhoPorHora,horasTrabalhadas)
+
+print(f'Salário Bruto: R${salarioBruto:.2f}')
+print(f'IR: R${ir:.2f}')
+print(f'INSS: R${inss:.2f}')
+print(f'Sindicato: R${sindicato:.2f}')
+print(f'Salário Liquido: R${salarioLiquido:.2f}')
+
+7)
+
+import math
+def calculaTinta(m2):
+    litros = m2/3
+    latas = math.ceil(litros/18)
+    valor = latas * 80
+    return litros,latas,valor
+
+m2 = float(input('Digite a área em metros quadrados: '))
+litros,latas,valor = calculaTinta(m2)
+print(f'Você precisará de {litros:.2f} L de tinta.\nVocê precisará de {latas} latas de tinta.\nO valor total será de R$ {valor:.2f}.')
