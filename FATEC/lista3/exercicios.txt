@@ -1,0 +1,98 @@
+1)
+
+def isTriangle(number):
+    if number < 0:
+        return False
+    
+    x=0
+    while True:
+        produto = x * (x+1) * (x+2)
+        x+=1
+        if produto == number:
+            return True
+        elif produto>number:
+            return False
+        
+    
+number = int(input('Digite um número: '))
+if isTriangle(number):
+    print(f'O número {number} é triagular.')
+else:
+    print(f'O número {number} não é triagular.')
+
+2)
+
+def troco(valor):
+    moedas = [50, 20, 10, 5, 2, 1]
+    troco = []
+    for moeda in moedas:
+        while valor >= moeda:
+            valor -= moeda
+            troco.append(moeda)
+    return troco
+        
+valor=int(input('Digite o valor: '))
+print('O troco deverá ser dado com: ', troco(valor)) 
+
+3)
+
+def primo(valor):
+    if valor <= 1:
+        return False
+    divisores=0 
+
+    for x in range(1, valor+1):
+        if x!=0 and valor % x == 0:
+            divisores += 1
+    
+    if divisores==2:
+        return True
+    else:
+        return False
+
+valor = int(input('Digite um número: '))
+if primo(valor):
+    print(f'{valor} é um número primo')
+else:
+    print(f'{valor} não é um número primo')
+
+4)
+
+def fibonacci(valor):
+    if valor==1 or valor == 2:
+        return True, 1
+    elif valor<1:
+        return False
+    
+    a,b = 1,1
+    for x in range(3,valor+1):
+        a,b = b,a+b
+
+    return True, b
+
+valor=int(input('Digite um número: '))
+
+result,number = fibonacci(valor)
+if result:
+    print(f'O {valor}º número da sequência de Fibonacci é {number}.')
+else:
+    print(f'O {valor}º número da sequência de Fibonacci não existe.')
+
+5)
+
+def euclides(a,b):
+    while True:
+        if a==0:
+            return b
+        elif b==0:
+            return a
+        elif a%b==0:
+            return b
+        else:
+            a,b = b,a%b
+        
+
+a = int(input('Digite o primeiro número: '))
+b = int(input('Digite o segundo número: '))
+
+print(f'O MDC é {euclides(a,b)}')
